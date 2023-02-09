@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+# for configuring zsh-syntax-highlighting
+
+# turning the highlighters on
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets regexp cursor)
+
+
+typeset -A ZSH_HIGHLIGHT_REGEXP
+
+# umm an example
+ZSH_HIGHLIGHT_REGEXP+=('\bdick\b' fg=black,bold,bg=green)
+
+# real removing
+ZSH_HIGHLIGHT_REGEXP+=('^realrm' fg=black,bg=red)
+
+# for parameters starting with minus
+ZSH_HIGHLIGHT_REGEXP+=('\s-\w+\b' fg=cyan)
+
+

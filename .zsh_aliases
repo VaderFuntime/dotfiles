@@ -1,0 +1,54 @@
+
+# nvim
+alias vi='nvim'
+alias vim='nvim'
+
+
+# cool reload screen
+alias reload='source ~/.zshrc && echo -e "\033[36m
+~~~~~~~~~~~~~~~~~~~~~
+~~ reloaded .zshrc ~~
+~~~~~~~~~~~~~~~~~~~~~\033[0m"'
+
+# exa = cooler ls
+
+# saving the original ls
+alias old_ls='/bin/ls'
+alias ols='old_ls'
+
+alias ls_w_snap='exa --icons --group-directories-first'
+alias ls='exa --icons --group-directories-first -I snap'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# some more ls aliases (exa)
+alias l='ls -1'
+alias ll='ls -l --no-permissions --no-user'
+alias la='ls_w_snap -la'
+alias lart='la -snew'
+alias lrt='lart'
+
+
+# trashing instead of removing
+alias realrm='/bin/rm'
+alias rm='trash'
+
+# config profile
+alias profconf='code ~/.zshrc'
+alias profvim='vim ~/.zshrc'
+
+# config aliases
+alias aliasconf='code ~/.zsh_aliases'
+alias aliasvim='vim ~/.zsh_aliases'
+
+# starship config
+alias starconf="code ~/.config/starship.toml"
+alias starvim="vim ~/.config/starship.toml"
+
+# for bat instead of cat
+alias cat="batcat"
+alias c='clear'
+
+alias sizelst="du -sh *  | sort -h"

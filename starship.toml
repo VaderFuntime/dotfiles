@@ -1,0 +1,81 @@
+format = """
+$username\
+$hostname\
+$directory\
+$fill\
+$git_branch\
+$git_status\
+$git_state\
+$line_break\
+$character"""
+
+# command_timeout = 1000
+# $cmd_duration\
+# $git_metrics\
+# add_newline = false
+
+
+[fill]
+symbol = " "
+
+[directory]
+style = "yellow"
+read_only = " "
+truncation_length = 4
+truncate_to_repo = false
+
+[character]
+success_symbol = "[](purple)"
+# success_symbol = "[❯    ](purple)"
+
+error_symbol = "[](red)"
+vicmd_symbol = "[❮](green)"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "yellow"
+
+[jobs]
+format = "[$symbol $number]($style) "
+symbol = ""
+style = "bold red"
+number_threshold = 1
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+
+
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took [$duration]($style) "
+style = "yellow"
+
+
+[memory_usage]
+symbol = " "
+
+[rust]
+format = "[$symbol $version](#CF6936)"
+symbol = "🦀"
+# symbol = ""
+
+
+[time]
+disabled = false
+style = "bold white"
+format = "[$time]($style)"
+
+[custom.stunnel]
+when = "ps aux | grep stunnel | grep -v grep"
+command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
+style = "red"
+format = "[TUNNEL OPEN for $output]($style)"
