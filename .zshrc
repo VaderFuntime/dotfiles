@@ -20,14 +20,6 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # add key binding options and more:
 source ~/.github_clones/zsh-edit/zsh-edit.plugin.zsh
 
-# # for them colors
-# if [ -x /usr/bin/dircolors ]; then
-#     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-# fi
-
-# export LS_COLORS='fi=37';
-# export DIR_COLORS='.*=35';
-
 
 #set ctrl-l to wipe screen (and not only scroll)
 bindkey -r "^l"
@@ -45,17 +37,17 @@ eval "$(starship init zsh)"
 . "$HOME/.cargo/env"
 
 # loading small scripts/ util functions
-. ~/.small_scripts
+. $DOTFILES/.small_scripts
 
 # for when i fuck up 
 eval $(thefuck --alias)
 
 # more syntax highlighting configuration
-source ~/.zsh-highlighting
+. $DOTFILES/.zsh_highlighting
 
 # loading aliases always keep last
-if [ -f ~/.zsh_aliases ]; then
-    . ~/.zsh_aliases
+if [ -f $DOTFILES/.zsh_aliases ]; then
+    . $DOTFILES/.zsh_aliases
 fi
 
 

@@ -1,3 +1,4 @@
+#!/bin/sh
 
 # nvim
 alias vi='nvim'
@@ -36,19 +37,19 @@ alias realrm='/bin/rm'
 alias rm='trash'
 
 # config profile
-alias profconf='code ~/.zshrc'
-alias profvim='vim ~/.zshrc'
+alias profconf='code $DOTFILES/.zshrc'
+alias profvim='vim $DOTFILES/.zshrc'
 
 # config aliases
-alias aliasconf='code ~/.zsh_aliases'
-alias aliasvim='vim ~/.zsh_aliases'
+alias aliasconf='code /.zsh_aliases'
+alias aliasvim='vim $DOTFILES/.zsh_aliases'
 
 # starship config
-alias starconf="code ~/.config/starship.toml"
-alias starvim="vim ~/.config/starship.toml"
+alias starconf="code $DOTFILES/starship.toml"
+alias starvim="vim $DOTFILES/starship.toml"
 
 # for bat instead of cat
 alias cat="batcat"
 alias c='clear'
 
-alias sizelst="du -sh *  | sort -h"
+alias sizelst="du -sh * .* | sort -h"

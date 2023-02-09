@@ -4,3 +4,8 @@ function take {
 	mkdir -p $1
 	cd $1
 }
+
+function mv_to_dot_and_link {
+	mv $1 ~/.dotfiles
+	ln -s ~/.dotfiles/$1 $1
+}
