@@ -5,7 +5,16 @@ function take {
 	cd $1
 }
 
+function link_to_dot {
+	ln -sf $DOTFILES/$1 $1
+}
+
 function mv_to_dot_and_link {
-	mv $1 ~/.dotfiles
-	ln -s ~/.dotfiles/$1 $1
+	mv $1 $DOTFILES
+	ln -s $DOTFILES/$1 $1
+}
+
+
+function sizelst {
+	du -sh *(D) | sort -h
 }

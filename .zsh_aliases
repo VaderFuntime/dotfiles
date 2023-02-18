@@ -52,4 +52,4 @@ alias starvim="vim $DOTFILES/starship.toml"
 alias cat="batcat"
 alias c='clear'
 
-alias sizelst="du -sh * .* | sort -h"
+# alias sizelst="du -sh * .* | sort -h"

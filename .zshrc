@@ -13,6 +13,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# adding homebrew to path
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 
 # Syntax highlighting in the prompt v
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -24,6 +27,8 @@ source ~/.github_clones/zsh-edit/zsh-edit.plugin.zsh
 #set ctrl-l to wipe screen (and not only scroll)
 bindkey -r "^l"
 bind '^L' clear
+
+bindkey -r "^R"
 
 # config icon space for exa
 export EXA_ICON_SPACING=2
@@ -45,9 +50,17 @@ eval $(thefuck --alias)
 # more syntax highlighting configuration
 . $DOTFILES/.zsh_highlighting
 
-# loading aliases always keep last
+# setting fzf options
+# export FZF_DEFAULT_OPTS='--height 40% --border'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# loading aliases 
+##### ALWAYS KEEP LAST ###
 if [ -f $DOTFILES/.zsh_aliases ]; then
     . $DOTFILES/.zsh_aliases
 fi
+
 
 
