@@ -16,17 +16,21 @@ compinit
 # adding homebrew to path
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# loading small scripts/ util functions
+. $DOTFILES/.small_scripts
 
 # Syntax highlighting in the prompt v
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# add key binding options and more:
+# # add key binding options and more:
 source ~/.github_clones/zsh-edit/zsh-edit.plugin.zsh
 
 
 #set ctrl-l to wipe screen (and not only scroll)
-bindkey -r "^l"
-bind '^L' clear
+# bindkey -r "^l"
+# zle -N hard_clear
+# bindkey "^l" hard_clear
+
 
 bindkey -r "^R"
 
@@ -41,8 +45,6 @@ eval "$(starship init zsh)"
 
 . "$HOME/.cargo/env"
 
-# loading small scripts/ util functions
-. $DOTFILES/.small_scripts
 
 # for when i fuck up 
 eval $(thefuck --alias)
@@ -54,6 +56,10 @@ eval $(thefuck --alias)
 # export FZF_DEFAULT_OPTS='--height 40% --border'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# setting up tab titles
+source /home/linuxbrew/.linuxbrew/opt/zinit/zinit.zsh
+zinit light trystan2k/zsh-tab-title
 
 
 # loading aliases 

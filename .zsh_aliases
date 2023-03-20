@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# nvim
-alias vi='nvim'
-alias vim='nvim'
+# lunar vim instead of vim  
+alias vi='lvim'
+alias vim='lvim'
 
 
 # cool reload screen

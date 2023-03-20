@@ -18,3 +18,11 @@ function mv_to_dot_and_link {
 function sizelst {
 	du -sh *(D) | sort -h
 }
+
+# Hard clear shortcut
+function hard_clear() {
+  bak_buff=$BUFFER
+  BUFFER="tput reset"
+  zle accept-line 
+  zle -U $bak_buff
+}
